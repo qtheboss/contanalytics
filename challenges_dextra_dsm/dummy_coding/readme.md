@@ -9,4 +9,4 @@ Your task: You will be given 4 different sets of data, namely, 3 years of sales 
 
 3. You need to run files "utilis.R" and after that run file "main_data_raw.R"endecevo
 
-4. You will received a file is "data_submission.csv"
+4. You will received a file "data_submission.csv"
