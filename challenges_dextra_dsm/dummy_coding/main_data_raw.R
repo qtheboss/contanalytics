@@ -25,7 +25,8 @@ data_dummy = as.data.frame(cbind(Sales, year, month, mat_market, mat_pmc, mat_ac
 model = model_linear_regresstion(data_dummy,1,19198)
 
 # Prediction on data train 
-predictions_train = fitted(model.svr)
+train = data_dummy[1 : 19198,]
+predictions_train = fitted(model)
 actual = train$Sales
 l <- abs(min(min(actual), min(predictions_train)))
 acc <- calc_accuracy(predictions_train, actual, l)
