@@ -10,6 +10,6 @@ Share and give about Big Data, Data Science or whatever you call it ...
 
 2. Code to compete Kaggle Titanic competition
 
-3. Data vizualization on R
+3. Data visualization on R
 
 4. Code to challenge on DEXTRA
