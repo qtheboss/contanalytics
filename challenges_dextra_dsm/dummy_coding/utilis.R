@@ -38,48 +38,24 @@ combine_table = function(file_name_train, file_name_test) {
 }
 # Encode function to prepare for dummy coding
 encode_data = function(data) {
-  data[data$Sales.Area == "Japan",]$Sales.Area = 2
-  data[data$Sales.Area == "Greater China",]$Sales.Area = 1
-  data[data$Sales.Area == "SEA",]$Sales.Area = 3
-  data[data$Sales.Area == "Korea",]$Sales.Area = 4
-  data[data$Sales.Area == "India",]$Sales.Area = 5
-  data[data$Sales.Area == "Others",]$Sales.Area = 6
-  
-  data[data$Market == "M1",]$Market = 1
-  data[data$Market == "M2",]$Market = 2
-  data[data$Market == "M3",]$Market= 3
-  data[data$Market == "M4",]$Market = 4
-  
-  data[data$Product.Market.Combi == "M1.Other",]$Product.Market.Combi = 1
-  data[data$Product.Market.Combi == "Desktops",]$Product.Market.Combi = 2
-  data[data$Product.Market.Combi == "Notebook",]$Product.Market.Combi = 3
-  data[data$Product.Market.Combi == "Servers",]$Product.Market.Combi = 4
-  data[data$Product.Market.Combi == "Smartphone & Tablet",]$Product.Market.Combi = 5
-  data[data$Product.Market.Combi == "M2.1",]$Product.Market.Combi = 6
-  data[data$Product.Market.Combi == "M2.Other",]$Product.Market.Combi = 7
-  data[data$Product.Market.Combi == "M4.Other",]$Product.Market.Combi = 8
-  data[data$Product.Market.Combi == "Appliance and Industrial",]$Product.Market.Combi = 9
-  data[data$Product.Market.Combi == "Lamps",]$Product.Market.Combi = 10
-  data[data$Product.Market.Combi == "M3.Other ",]$Product.Market.Combi = 11
-  data[data$Product.Market.Combi == "LED",]$Product.Market.Combi = 12
-  data[data$Product.Market.Combi == "M4",]$Product.Market.Combi = 13
-  
-  data[data$PdtLine == "P1",]$PdtLine = 1 
-  data[data$PdtLine == "P2",]$PdtLine = 2 
-  data[data$PdtLine == "P3",]$PdtLine = 3 
-  data[data$PdtLine == "P4",]$PdtLine = 4 
-  data[data$PdtLine == "P5",]$PdtLine = 5
-  data[data$PdtLine == "P6",]$PdtLine = 6
-  data[data$PdtLine == "P7",]$PdtLine = 7
-  data[data$PdtLine == "P8",]$PdtLine = 8
-  
+
+  # change variables to factor 
+  data$Market = factor(data$Market)
+  data$Sales.Area = factor(data$Sales.Area)
+  data$PdtLine = factor(data$PdtLine)
+  data$Product.Market.Combi = factor(data$Product.Market.Combi)
   data$Application.Code = factor(data$Application.Code)
   data$Cust = factor(data$Cust)
   data$Material = factor(data$Material)
-  
+  # chang variables to numeric
+  data$Market = as.numeric(data$Market)
+  data$Product.Market.Combi = as.numeric(data$Product.Market.Combi)
+  data$PdtLine = as.numeric(data$PdtLine)
+  data$Sales.Area = as.numeric(data$Sales.Area)
   data$Application.Code = as.numeric(data$Application.Code)
   data$Cust = as.numeric(data$Cust)
   data$Material = as.numeric(data$Material)
+  
   
   return (data)
 }
