@@ -28,10 +28,7 @@ for(i in 1: nrow(df)){
   else if((df$Anand.white[i] == 1 & df$Result[i] == 1) || (df$Anand.white[i] == 0 & df$Result[i] == 0)) {
     df$Anand.won[i] = 1 
   }
-  # discover His code forget this
-  else {
-    df$Anand.won[i] = 0
-  }
+
 }
 
 # Lifetime scores
