@@ -86,4 +86,4 @@ for(i in 1:100)
 }
 print(c1)
 
-write(results, file="knn_benchmark.csv", ncolumns=1)
+write(results, file="ann_benchmark.csv", ncolumns=1)
