@@ -125,7 +125,7 @@ analyzeProvince = function(province, minDistance, animate = FALSE, gcPoints = 10
 provinceNames = c("Hà Nội", "Lâm Đồng", "Quảng Nam","Hải Phòng","Hồ Chí Minh city")
 # run the calculations and save results
 
-# You need to create folder "results_vietnam"
+# You need to create a folder name is "results_vietnam"
 for(province in provinceNames) {
   print(province)
   a <- proc.time()
